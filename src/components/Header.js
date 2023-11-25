@@ -94,6 +94,7 @@ const Header = () => {
                 style={{ marginRight: "1vw" }}
                 href={social.url}
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon icon={social.icon} size="2x" />
               </a>

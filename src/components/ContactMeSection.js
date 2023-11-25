@@ -100,7 +100,12 @@ const LandingSection = () => {
                     formik.touched.email = true;
                   }}
                 />
-                {formik.errors.firstName && formik.touched.firstName ? (
+                {/* {formik.values.email && formik.touched.email ? (
+                  <FormErrorMessage>Invalid Email Address</FormErrorMessage>
+                ) : null} */}
+                {formik.values.email === "" && formik.touched.email ? (
+                  <FormErrorMessage>Required</FormErrorMessage>
+                ) : formik.errors.email && formik.touched.email ? (
                   <FormErrorMessage>Invalid Email Address</FormErrorMessage>
                 ) : null}
               </FormControl>
@@ -132,7 +137,9 @@ const LandingSection = () => {
                     formik.touched.comment = true;
                   }}
                 />
-                {formik.errors.comment && formik.touched.comment ? (
+                {formik.values.comment === "" && formik.touched.comment ? (
+                  <FormErrorMessage>Required</FormErrorMessage>
+                ) : formik.errors.comment && formik.touched.comment ? (
                   <FormErrorMessage>
                     Minimum 25 characters required
                   </FormErrorMessage>
